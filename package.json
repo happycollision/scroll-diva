@@ -1,7 +1,7 @@
 {
-  "name": "scrolldiva",
+  "name": "Scroll Diva",
   "version": "0.0.0",
-  "description": "Scroll Diva",
+  "description": "Keeps your elements in the spotlight when scrolling.",
   "keywords": [
     "jquery-plugin"
   ],
