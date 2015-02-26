@@ -8,6 +8,7 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     // Metadata.
+    filename: 'scrolldiva',
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -24,8 +25,8 @@ module.exports = function (grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/jquery.<%= pkg.name %>.js'
+        src: ['src/<%= filename %>.js'],
+        dest: 'dist/jquery.<%= filename %>.js'
       }
     },
     uglify: {
@@ -34,13 +35,13 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.<%= pkg.name %>.min.js'
+        dest: 'dist/jquery.<%= filename %>.min.js'
       }
     },
     qunit: {
       all: {
         options: {
-          urls: ['http://localhost:9000/test/<%= pkg.name %>.html']
+          urls: ['http://localhost:9000/test/<%= filename %>.html']
         }
       }
     },
@@ -74,7 +75,7 @@ module.exports = function (grunt) {
       },
       src: {
         files: '<%= jshint.src.src %>',
-        tasks: ['jshint:src', /*'qunit'*/]
+        tasks: ['jshint:src', /*'qunit'*/, 'prepare']
       },
       test: {
         files: '<%= jshint.test.src %>',
@@ -110,7 +111,8 @@ module.exports = function (grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'connect', /*'qunit'*/, 'clean', 'concat', 'uglify']);
-  grunt.registerTask('serve', ['connect', 'watch']);
+  grunt.registerTask('prepare', ['clean', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', /*'connect', 'qunit',*/ 'prepare']);
+  grunt.registerTask('serve', ['default', 'connect', 'watch']);
   grunt.registerTask('test', ['jshint', 'connect', /*'qunit'*/]);
 };
