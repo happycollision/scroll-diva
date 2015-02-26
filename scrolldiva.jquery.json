@@ -1,0 +1,28 @@
+{
+  "name": "scrolldiva",
+  "title": "Scroll Diva",
+  "description": "Keeps your elements in the spotlight while scrolling.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/happycollision/scrollDiva",
+  "author": {
+    "name": "Don Denton",
+    "url": "https://github.com/happycollision"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/happycollision/scrollDiva"
+  },
+  "bugs": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~^1.11"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ]
+}
