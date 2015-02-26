@@ -7,28 +7,28 @@
  */
 (function ($) {
   // Collection method.
-  $.fn. = function () {
+  $.fn.scrollDiva = function () {
     return this.each(function (i) {
       // Do something to each selected element.
-      $(this).html('' + i);
+      $(this).html('scrollDiva' + i);
     });
   };
 
   // Static method.
-  $. = function (options) {
+  $.scrollDiva = function (options) {
     // Override default options with passed-in options.
-    options = $.extend({}, $..options, options);
+    options = $.extend({}, $.scrollDiva.options, options);
     // Return the name of your plugin plus a punctuation character.
-    return '' + options.punctuation;
+    return 'scrollDiva' + options.punctuation;
   };
 
   // Static method default options.
-  $..options = {
+  $.scrollDiva.options = {
     punctuation: '.'
   };
 
   // Custom selector.
-  $.expr[':']. = function (el) {
+  $.expr[':'].scrollDiva = function (el) {
     return $(el).text() === 'awesome test markup';
   };
 }(jQuery));
