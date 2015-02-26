@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scroll Diva</title>
+    <style>
+      html{
+        box-sizing: border-box
+      }
+      *, *:before, *:after {
+        box-sizing: inherit
+      }
+      body{
+        background: #777;
+      }
+      .inner{
+        border: 3px solid black;
+        float: left;
+        width: 48%;
+        min-height: 500px;
+        margin: 0 1%;
+        font-size: 3em;
+        padding: 16px;
+        color: white;
+      }
+      .left{
+        background-color: #911;
+        min-height: 2000px;
+      }
+      .right{
+        background-color: #119;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>---Scroll Diva---</h1>
+    
+    <div class="container">
+      <div class="inner left">I am a left box</div>
+      <div class="inner right">I am a right box</div>
+    </div>
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>')</script>
+
+    <script src="../dist/jquery.scrolldiva.min.js"></script>
+  </body>
+</html>
