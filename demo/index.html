@@ -11,13 +11,15 @@
       }
       body{
         background: #777;
+        font-family: "Arial Black" arial sans-serif;
+        font-weight: bold;
       }
       .inner{
         border: 3px solid black;
         float: left;
         width: 48%;
         min-height: 500px;
-        margin: 0 1%;
+        margin: 10px 1%;
         font-size: 3em;
         padding: 16px;
         color: white;
@@ -28,6 +30,15 @@
       }
       .right{
         background-color: #119;
+      }
+      .container{
+        border: 1px solid black;
+      }
+      /* clearfix */
+      .container:after {
+        content:"";
+        display:table;
+        clear:both;
       }
     </style>
   </head>
@@ -44,5 +55,9 @@
     <script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>')</script>
 
     <script src="../dist/jquery.scrolldiva.min.js"></script>
+
+    <script>
+      $('.inner').scrollDiva();
+    </script>
   </body>
 </html>
