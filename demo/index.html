@@ -31,8 +31,13 @@
       .right{
         background-color: #119;
       }
+      .rightStatic{
+	      background-color: purple;
+	      min-height: 200px;
+      }
       .container{
         border: 1px solid black;
+        max-width: 700px;
       }
       /* clearfix */
       .container:after {
@@ -47,8 +52,36 @@
     
     <div class="container">
       <div class="inner left">I am a left box</div>
+      <div class="inner rightStatic">I am top right</div>
       <div class="inner right">I am a right box</div>
     </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     
@@ -57,7 +90,7 @@
     <script src="../dist/jquery.scrolldiva.min.js"></script>
 
     <script>
-      $('.inner').scrollDiva();
+      $('.right').scrollDiva();
     </script>
   </body>
 </html>
