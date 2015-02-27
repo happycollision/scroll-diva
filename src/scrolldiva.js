@@ -29,6 +29,6 @@
 
   // Custom selector.
   $.expr[':'].scrollDiva = function (el) {
-    return $(el).text() === 'awesome test markup';
+    return $(el).data('scrollDiva') === true;
   };
 }(jQuery));
