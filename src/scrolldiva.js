@@ -59,6 +59,16 @@
           width: ''
         });
       }
+      function resetCss(){
+        $el.css({
+          position: '', 
+          marginTop: '',
+          bottom: '',
+          left: '',
+          top: '',
+          width: ''
+        });
+      }
 
       // Set the data for custom selector
       $(this).data('scrollDiva',true);
@@ -114,18 +124,20 @@
       $parent.append(baseBottomMarker);
 */
       
-
-      
-      var state = null;
-      $window.scroll(function(){
+      function placeElement(){
         var elTopPos = parseInt($window.scrollTop() - originalOffset.top + originalTopMargin + borderWidth);
         if (elTopPos > 0) { pinToTop(); }
         if (elTopPos <= 0 && elTopPos < playableHeight) { snapToTop(); }
         if (elTopPos >= playableHeight) { snapToBottom(); }
-      });
+      }
+      
+      placeElement();
+      
+      $window.scroll(placeElement);
       
       $window.on('resize',function(){
         $window.off();
+        resetCss();
         $el.scrollDiva();
       });
     });
