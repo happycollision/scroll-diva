@@ -18,7 +18,8 @@
           marginTop: newTopMargin,
           bottom: 'auto',
           left: 'auto',
-          top: 'auto'
+          top: 'auto',
+          width: ''
         });
       }
       function pinToBottom(){
@@ -55,7 +56,7 @@
           bottom: 'auto',
           left: 'auto',
           top: 'auto',
-          width: null
+          width: ''
         });
       }
 
