@@ -80,16 +80,52 @@
       var originalLeftMargin = parseInt($el.css('marginLeft'));
       var originalPos = $el.position();
       var originalOffset = $el.offset();
+      var originalWidth = $el.outerWidth();
       var shavedHeight = fullHeight - originalTopMargin;
       var parentTopPos = $parent.offset().top;
       var parentHeight = $parent.height();
       var parentBottomPos = parentTopPos + parentHeight;
+      var viewportHeight = $(window).height();
+      var playableHeight = parentHeight - originalPos.top - fullHeight;
       
+/*
+      markerCss = {
+	  	  position: 'absolute',
+	  	  height: 0,
+	  	  width: '100%',
+	  	  border: 'none',
+	  	  padding: 0,
+	  	  maxWidth: '100%',
+	  	  minWidth: '100%',
+	  	  minHeight: 0,
+	  	  height: 1,
+	  	  backgroundColor: '#fff'
+      };
+      
+      apexTopMarker = $('<div></div>').css(markerCss).css('top',originalPos.top);
+      apexBottomMarker = $('<div></div>').css(markerCss).css('top',originalPos.top + fullHeight);
+      baseTopMarker = $('<div></div>').css(markerCss).css('top',originalPos.top + playableHeight);
+      baseBottomMarker = $('<div></div>').css(markerCss).css('top',originalPos.top + playableHeight + fullHeight);
+
+      $parent.append(apexTopMarker);
+      $parent.append(apexBottomMarker);
+      $parent.append(baseTopMarker);
+      $parent.append(baseBottomMarker);
+*/
+      
+
+      
+      var state = null;
       $window.scroll(function(){
-	      var scrollPos = parseInt($window.scrollTop() - originalOffset.top + originalTopMargin + borderWidth);
-	      if (scrollPos > 0) { pinToTop(); }
-	      if (scrollPos <= 0) { snapToTop(); }
-	      
+        var elTopPos = parseInt($window.scrollTop() - originalOffset.top + originalTopMargin + borderWidth);
+        if (elTopPos > 0) { pinToTop(); }
+        if (elTopPos <= 0 && elTopPos < playableHeight) { snapToTop(); }
+        if (elTopPos >= playableHeight) { snapToBottom(); }
+      });
+      
+      $window.on('resize',function(){
+        $window.off();
+        $el.scrollDiva();
       });
     });
   };
