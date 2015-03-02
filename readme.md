@@ -17,7 +17,7 @@ In your web page:
 <script src="dist/scrolldiva.min.js"></script>
 <script>
   jQuery(function ($) {
-    $.awesome(); // "awesome"
+    $('.some-element').scrollDiva();
   });
 </script>
 ```
@@ -26,3 +26,10 @@ In your web page:
 ## License
 
 MIT © Don Denton
+
+
+# NOTES
+
+discuss box-model (assumes border-box)
+
+uses position:fixed
