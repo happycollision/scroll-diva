@@ -79,7 +79,7 @@
           marginTop: roundCss($el,'marginTop'),
           marginRight: roundCss($el,'marginRight'),
           marginBottom: roundCss($el,'marginBottom'),
-          backgroundColor: '#696'
+          //backgroundColor: '#696'
         });
         
         $el.css({margin:0, width: '100%'}).wrap($wrap);
